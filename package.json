@@ -1,0 +1,41 @@
+{
+  "name": "leasablenft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "launch-devnet": "ganache-cli --chainId 1337 -a 10 -e 100000 --acctKeys devnet-accounts.json -m \"olive cook review chalk discover sample vessel vast soul turkey cigar moment\"",
+    "compile-all": "truffle compile --all",
+    "compile-all-clean": "rm -rf ./abis && truffle compile --all",
+    "deploy-devnet": "truffle migrate --network development --compile-none",
+    "deploy-devnet-reset": "truffle migrate --network development --reset",
+    "deploy-rinkeby": "truffle migrate --network rinkeby --compile-none",
+    "deploy-rinkeby-reset": "truffle migrate --network rinkeby --compile-none --reset",
+    "deploy-mainnet": "truffle migrate --network mainnet --compile-none",
+    "deploy-mumbai": "truffle migrate --network mumbai --compile-none",
+    "deploy-mumbai-reset": "truffle migrate --network mumbai --compile-none --reset",
+    "authAssign-devnet": "truffle exec scripts/AuthAssignment.js --network development",
+    "authAssign-rinkeby": "truffle exec scripts/AuthAssignment.js --network rinkeby",
+    "authAssign-mainnet": "truffle exec scripts/AuthAssignment.js --network mainnet",
+    "test": "truffle test --compile-none",
+    "verify-rinkeby": "truffle run verify --network rinkeby",
+    "verify-mainnet": "truffle run verify --network mainnet",
+    "verify-mumbai": "truffle run verify --network mumbai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ghadi8/LeasableNft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ghadi8/LeasableNft/issues"
+  },
+  "homepage": "https://github.com/Ghadi8/LeasableNft#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.1",
+    "@truffle/hdwallet-provider": "^2.0.12",
+    "ethers": "^5.6.9",
+    "web3": "^1.7.4"
+  }
+}

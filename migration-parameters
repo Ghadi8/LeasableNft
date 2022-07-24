@@ -1,0 +1,27 @@
+const Web3 = require("web3");
+const provider = new Web3.providers.HttpProvider("http://localhost:8545");
+var web3 = new Web3(provider);
+
+const { toTokens } = require("./utils/test-utils")(web3);
+
+module.exports = {
+  devnet: {
+    name: "LeasableNft",
+    symbol: "LNFT",
+    baseTokenURI: "ipfs:///",
+    notRevealedURI: "notrevealed:///",
+    mintPrice: toTokens("0.5"),
+    mintingLimit: 10,
+    maxTokenId: 1000,
+  },
+  rinkeby: {
+    name: "LeasableNft",
+    symbol: "LNFT",
+    baseTokenURI: "ipfs:///",
+    notRevealedURI: "notrevealed:///",
+    mintPrice: toTokens("0.5"),
+    mintingLimit: 10,
+    maxTokenId: 1000,
+  },
+  mainnet: {},
+};
